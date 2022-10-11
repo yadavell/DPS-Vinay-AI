@@ -10,7 +10,7 @@ def test_heroku():
     return "Heroku Working"
 
 
-@app.route("/")
+@app.route("/", methods=["POST"])
 def predict():
     try:
         year = request.args.get("year")
