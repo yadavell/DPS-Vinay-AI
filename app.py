@@ -13,8 +13,9 @@ def test_heroku():
 @app.route("/", methods=["POST"])
 def predict():
     try:
-        year = request.args.get("year")
-        month = request.args.get("month")
+        data = request.get_json()
+        year = data["year"]
+        month = data["month"]
         return str(year) + " : " + str(month)
     except Exception as err:
         return err
