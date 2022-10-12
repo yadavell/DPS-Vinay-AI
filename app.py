@@ -17,6 +17,6 @@ def apppredict():
         year = data["year"]
         month = data["month"]
         prediction = int(model.predict([[year, month]]))
-        return prediction
+        return str(prediction)
     except Exception as err:
         return err
